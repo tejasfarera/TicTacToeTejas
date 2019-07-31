@@ -14,6 +14,7 @@
 		951D314722DD93B800D865A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 951D314522DD93B800D865A5 /* LaunchScreen.storyboard */; };
 		951D315222DD93B800D865A5 /* ticTacToeTejasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D315122DD93B800D865A5 /* ticTacToeTejasTests.swift */; };
 		951D315D22DD93B800D865A5 /* ticTacToeTejasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D315C22DD93B800D865A5 /* ticTacToeTejasUITests.swift */; };
+		951D316B22DD97AF00D865A5 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951D316A22DD97AF00D865A5 /* MyCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		951D315822DD93B800D865A5 /* ticTacToeTejasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ticTacToeTejasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		951D315C22DD93B800D865A5 /* ticTacToeTejasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticTacToeTejasUITests.swift; sourceTree = "<group>"; };
 		951D315E22DD93B800D865A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		951D316A22DD97AF00D865A5 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				951D314322DD93B800D865A5 /* Assets.xcassets */,
 				951D314522DD93B800D865A5 /* LaunchScreen.storyboard */,
 				951D314822DD93B800D865A5 /* Info.plist */,
+				951D316A22DD97AF00D865A5 /* MyCollectionViewCell.swift */,
 			);
 			path = ticTacToeTejas;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				951D313F22DD93B700D865A5 /* ViewController.swift in Sources */,
 				951D313D22DD93B700D865A5 /* AppDelegate.swift in Sources */,
+				951D316B22DD97AF00D865A5 /* MyCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +446,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = rails.ticTacToeTejas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -460,7 +464,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = rails.ticTacToeTejas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
