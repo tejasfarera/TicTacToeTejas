@@ -27,11 +27,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
     }
     
+    //    MARK:- Requires number which is number of cells, in our case 3*3 matrix
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         inputPlayerNames()
         return 9;
     }
     
+    //    MARK: - create cells
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myIdentifier", for: indexPath) as? MyCollectionViewCell else{
             return MyCollectionViewCell()
@@ -41,6 +43,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
+    //    MARK: - actions perform when a cell is clicked
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! MyCollectionViewCell
         if(!(cell.inputLabel.text == "X" || cell.inputLabel.text == "O")){
@@ -76,6 +79,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    //    MARK: - the alert which takes player's name as input
     func inputPlayerNames(){
         let alert = UIAlertController(title: "Enter Name", message: "Enter name of player 1", preferredStyle: .alert)
         
@@ -104,6 +108,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
        
     }
     
+    //    MARK: - increases the score of winner player by 1
     func increasePlayer(player: String){
         switch player {
         case "X":
@@ -117,12 +122,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    //    MARK: - after draw or a win, resets the game to initial stag
     func resetGame(){
         boardCollectionView.reloadData()
         matrix.removeAll()
         count = 0
     }
     
+    //    MARK: - shows alerts after a draw or win to declare result of game
     func showAlert(game: String){
         switch game {
         case "X":
@@ -142,10 +149,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         }
     }
     
+    //    MARK: - returns true if any 3 continuous combination are formed of player who recently marked cell
     func checkSuccess(index: Int, player: String) -> Bool{
         return ( checkVertical(index: index, player: player) || checkHorizontal(index: index, player: player) || checkDiagonal(index: index, player: player) )
     }
     
+    //     MARK: - checks both diagonal combinations
     func checkDiagonal(index: Int, player: String) -> Bool{
         if index % 2 == 0 {
             return (diagonalUp(index: index, player: player) || diagonalDown(index: index, player: player))
@@ -153,6 +162,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return false
     }
     
+    //    MARK: checks up diagonal for combination of recently marked player
     func diagonalUp(index: Int, player: String) -> Bool{
         var increament = 2
         for _ in (1...3){
@@ -165,6 +175,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return true
     }
     
+    //    MARK: checks down diagonal for combination of recently marked player
     func diagonalDown(index: Int, player: String) -> Bool{
         var diagonalIncreament = 4
         for var i in (1...2){
@@ -177,6 +188,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return true
     }
     
+    //    MARK: checks horizontal for combination of recently marked player on particular row
     func checkHorizontal(index: Int, player: String) -> Bool{
         let row = (index+3)/3
         var horizontalIncrement = 0
@@ -190,6 +202,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return true
     }
     
+    //    MARK: checks vertical for combination of recently marked player on particular column
     func checkVertical(index: Int, player: String) -> Bool{
         var verticalIncrement = 3
         for var i in (1...2)  {
@@ -202,6 +215,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         return true
     }
     
+    //    MARK: - check to check for success
     func checkCount() -> Bool{
         if(count>3){
             return true;
