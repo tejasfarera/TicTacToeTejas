@@ -21,7 +21,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var X: Int = 0
     var O: Int = 0
     var playerX = String()
-    var playerO = String() 
+    var playerO = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
